@@ -13,5 +13,5 @@
 * I will be learning how to create a website using authentication, connecting the front end to the back end. I'll be researching the best way to setup my table structure in the database to store the quiz and user information. 
 
 # Technologies used
-* JavaScript, Java, AngularJS, Spring Boot, MySQL, HTML, CSS 
+* Java, Spring Boot, MySQL, Hibernate, HTML, CSS 
 
