@@ -1,12 +1,15 @@
 package org.launchcode.hpproj.models;
 
 import javax.persistence.Entity;
+import javax.validation.constraints.NotNull;
 
 //@Entity
 public class User extends AbstractEntity{
 
+    @NotNull
     private String username;
 
+    @NotNull
     private String pwHash;
 
     public User() {
