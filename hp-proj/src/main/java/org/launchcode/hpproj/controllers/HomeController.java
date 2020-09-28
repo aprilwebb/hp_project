@@ -9,8 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class HomeController {
 
     @RequestMapping("")
-    public String home(Model model){
-        model.addAttribute("title", "Welcome to Wizarding World Trivia!");
+    public String home(){
         return "index";
     }
 
