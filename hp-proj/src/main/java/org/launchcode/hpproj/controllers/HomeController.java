@@ -13,4 +13,12 @@ public class HomeController {
         return "index";
     }
 
+
+//    House cup feature controller: needs to query to DB (all users for house is ____) to
+//    show who's winning.
+
+//    Rotating fun fact feature controller; link to fun fact page?
+//    Should prob be stored in array of facts with use of some random method
+
+//    Featured quiz controller
 }
