@@ -1,0 +1,21 @@
+html {
+    background-color: maroon;
+    background-image: url("/images/train.jpg");
+    background-size: cover;
+}
+
+body {
+    text-align: center;
+}
+
+p {
+    font-size: smaller;
+}
+
+.login-signup {
+    text-align: right;
+}
+
+.navbar, h1 {
+    text-align: center;
+}
