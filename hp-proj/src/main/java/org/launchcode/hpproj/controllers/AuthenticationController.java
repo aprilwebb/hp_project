@@ -1,18 +1,89 @@
 package org.launchcode.hpproj.controllers;
 
-//import org.launchcode.hpproj.models.data.UserRepository;
+import org.launchcode.hpproj.models.User;
+import org.launchcode.hpproj.models.data.UserRepository;
+import org.launchcode.hpproj.models.dto.SignUpFormDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.ui.Model;
+import org.springframework.validation.Errors;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+import javax.validation.Valid;
+import java.util.Optional;
 
 @Controller
-@RequestMapping("login")
 public class AuthenticationController {
 
-//    @Autowired
-//    UserRepository userRepository;
+    @Autowired
+    UserRepository userRepository;
 
-    public String login(){
-        return "";
+    private static final String userSessionKey = "user";
+
+    public User getFromUserSession(HttpSession session){
+        Integer userId = (Integer) session.getAttribute(userSessionKey);
+        if(userId == null){
+            return null;
+        }
+
+        Optional<User> user = userRepository.findById(userId);
+
+        if(user.isEmpty()){
+            return null;
+        }
+
+        return user.get();
+
+    }
+
+    private static void setUserInSession(HttpSession session, User user){
+        session.setAttribute(userSessionKey, user.getId());
+
+    }
+
+    @GetMapping("/signup")
+    public String displaySignUpForm(Model model){
+        model.addAttribute(new SignUpFormDTO());
+        model.addAttribute("title", "Create account");
+        return "signup";
+
+    }
+
+    @PostMapping("/signup")
+    public String processSignUpForm(@ModelAttribute @Valid SignUpFormDTO signUpFormDTO,
+                                    Errors errors, HttpServletRequest request,
+                                    Model model){
+
+        if (errors.hasErrors()) {
+            model.addAttribute("title", "Create account");
+            return "signup";
+        }
+
+        User existingUser = userRepository.findByUsername(signUpFormDTO.getUsername());
+
+        if (existingUser != null) {
+            errors.rejectValue("username", "username.alreadyexists", "A user with that username already exists");
+            model.addAttribute("title", "Create account");
+            return "signup";
+        }
+
+        String password = signUpFormDTO.getPassword();
+        String verifyPassword = signUpFormDTO.getVerifyPassword();
+        if (!password.equals(verifyPassword)) {
+            errors.rejectValue("password", "passwords.mismatch", "Passwords do not match");
+            model.addAttribute("title", "Create account");
+            return "signup";
+        }
+
+        User newUser = new User(signUpFormDTO.getUsername(), signUpFormDTO.getPassword());
+        userRepository.save(newUser);
+        setUserInSession(request.getSession(), newUser);
+
+        return "redirect:";
+
     }
 }

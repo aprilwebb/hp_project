@@ -1,16 +1,19 @@
 package org.launchcode.hpproj.models;
 
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import java.util.ArrayList;
+import java.util.List;
 
-//@Entity
+@Entity
 public class Quiz extends AbstractEntity{
 
     private String name;
 
-//    OnetoMany?
-//    JoinColumn w quiz_id?
-    private Question questions;
+    @OneToMany
+    private final List<Question> questions = new ArrayList<>();
 
-    private Score score;
+//    private Score score;
 
 }
