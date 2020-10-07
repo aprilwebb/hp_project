@@ -9,7 +9,7 @@
 </head>
 <body>
 <div th:fragment="page-header" class="navbar">
-    <a th:href="@{/}">Home</a> |
+    <a th:href="@{/home}">Home</a> |
     <a th:href="@{/quizzes}">Quizzes</a> |
     <a th:href="@{/account}">My Account</a>
 
@@ -19,6 +19,10 @@
     <a th:href="@{/login}">Login</a> <br>
     <p>Don't have an account? <a th:href="@{/signup}"> Sign Up</a></p>
 
+</div>
+
+<div th:fragment="logout" class="logout">
+    <a th:href="@{/logout}">Log out</a>
 </div>
 
 </body>
