@@ -10,10 +10,13 @@ import java.util.List;
 @Entity
 public class Score extends AbstractEntity{
 
+    private int score;
+
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
 
-    @ManyToMany
-    private List<Quiz> quizzes = new ArrayList<>();
+    @ManyToOne
+    @JoinColumn(name = "quiz_id")
+    private Quiz quiz;
 }
