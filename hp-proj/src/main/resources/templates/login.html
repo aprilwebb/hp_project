@@ -3,25 +3,30 @@
 <head th:replace="fragments :: head">
 </head>
 <body>
-<nav th:replace="fragments :: login-signup"></nav>
+<br>
+<nav th:replace="fragments :: login"></nav>
 
-<nav th:replace="fragments :: page-header"></nav><br>
+<nav th:replace="fragments :: page-header"></nav><br><br>
 
+
+<p>Please login below to access more content.</p><br>
 <form method="post">
     <div class="form-group">
         <label th:for="username">Username
             <input class="form-control" th:field="${loginFormDTO.username}">
         </label>
         <p class="error" th:errors="${loginFormDTO.username}"></p>
-    </div>
+    </div><br>
     <div class="form-group">
         <label>Password
             <input class="form-control" th:field="${loginFormDTO.password}" type="password">
         </label>
         <p class="error" th:errors="${loginFormDTO.password}"></p>
-    </div>
+    </div> <br>
 
-    <input type="submit" value="Log In" />
+    <input type="submit" class="button" value="Log In" /><br>
+    <p>Don't have an account? <a th:href="@{/signup}"> Sign Up!</a></p><br><br>
+
 </form>
 
 </body>

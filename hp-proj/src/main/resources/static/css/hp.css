@@ -1,21 +1,34 @@
 html {
-    background-color: maroon;
     background-image: url("/images/train.jpg");
     background-size: cover;
 }
 
-body {
+
+img {
+    width: 30%;
+    height: auto;
+    border:1px solid #021a40;
+}
+
+header, body, footer {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.6);
+    margin: 15px;
+}
+
+/*.login {*/
+/*    float: right;*/
+/*}*/
+
+.navbar, h1 {
     text-align: center;
 }
 
-p {
-    font-size: smaller;
-}
-
-.login-signup {
-    text-align: right;
-}
-
-.navbar, h1 {
+.button {
+    background-color: #e7e7e7;
+    color: black;
+    border-radius: 12px;
+    display: inline-block;
+    padding: 15px 32px;
     text-align: center;
 }

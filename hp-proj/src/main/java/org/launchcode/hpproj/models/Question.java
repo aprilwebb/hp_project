@@ -18,6 +18,7 @@ public class Question extends AbstractEntity{
     private Quiz quiz;
 //    How will I check the answer if it's a radio button and stored in array?
 
+
     public Question(String prompt, String answer) {
         this.prompt = prompt;
         this.answer = answer;

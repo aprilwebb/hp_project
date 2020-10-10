@@ -3,11 +3,26 @@
 <head th:replace="fragments :: head">
 </head>
 <body>
-<nav th:replace="fragments :: login-signup"></nav>
+<br>
+<nav th:replace="fragments :: login"></nav>
 
 <h1>Quizzes</h1>
-<nav th:replace="fragments :: page-header"></nav>
+<nav th:replace="fragments :: page-header"></nav><br>
+<img src="/images/houses.jpg"><br>
+<p>Discover which Wizarding house you belong to with this Sorting Hat quiz! <br>
+    Are you a courageous Gryffindor? A loyal Hufflepuff? A cunning Slytherin?
+    A clever Ravenclaw?<br>
+    <a th:href="@{/quizzes/sortingquiz}">Find out now!</a></p><br>
 
+<img src="/images/hogwarts.jpg"><br>
+<p>Want to put your Wizarding World knowledge to the test with this curious trivia? <br>
+    <a th:href="@{/quizzes/trivia}">Take the quiz now!</a></p><br>
+
+<img src="/images/potion.jpg"><br>
+<p>Do you know your hexes from your charms? <br>
+    Let's hope this quiz on spells doesn't leave you
+    stupefied!<br>
+    <a th:href="@{/quizzes/spellsquiz}">Rennervate!</a></p><br><br>
 
 </body>
 </html>
