@@ -13,7 +13,9 @@ img {
 header, body, footer {
     text-align: center;
     background: rgba(255, 255, 255, 0.6);
+    background-size: cover;
     margin: 15px;
+    min-height:100vh;
 }
 
 /*.login {*/
