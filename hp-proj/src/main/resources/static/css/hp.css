@@ -13,24 +13,55 @@ img {
 header, body, footer {
     text-align: center;
     background: rgba(255, 255, 255, 0.6);
-    background-size: cover;
     margin: 15px;
     min-height:100vh;
 }
-
-/*.login {*/
-/*    float: right;*/
-/*}*/
 
 .navbar, h1 {
     text-align: center;
 }
 
+.login {
+    float: right;
+    color: white;
+}
+
 .button {
-    background-color: #e7e7e7;
-    color: black;
-    border-radius: 12px;
+    background-color: darkslategray;
+    color: darkgoldenrod;
+    border-radius: 10px;
     display: inline-block;
-    padding: 15px 32px;
+    padding: 15px 30px;
     text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: darkgoldenrod;
+}
+
+a:visited{
+    color: darkgoldenrod;
+
+}
+
+.form-group{
+    position: center;
+}
+
+.profileimg {
+    width: 104px;
+    height: 96px;
+    background: #e6e6e6;
+    border-color: #aaaaaa;
+    border-style: solid;
+    position: absolute;
+    top: 225px;
+    left: 350px;
+}
+
+.profileimglink{
+    position: absolute;
+    top: 345px;
+    left: 355px;
 }

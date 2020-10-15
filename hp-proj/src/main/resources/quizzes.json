@@ -1,0 +1,114 @@
+{
+  "triviaQuestions": [
+    {
+      "question": "What is Professor Dumbledore's full name?",
+      "options": ["Albus Percival Wulfric Brian Dumbledore",
+                  "Albus Percival Walter Brian Dumbledore",
+                  "Albus Percy Wulfric Brian Dumbledore",
+                  "Albus Percival Walter Braxton Dumbledore"],
+      "correctAnswerIndex": 0
+    },
+    {
+      "question": "Who was the original owner of the Sorting Hat?",
+      "options": ["Albus Dumbledore", "Godric Gryffindor", "Gellert Grindelwald", "Rowena Ravenclaw"],
+      "correctAnswerIndex": 1
+    },
+    {
+      "question": "What is Ravenclaw's signature item?",
+      "options": ["Diadem", "Sword", "Locket", "Cup"],
+      "correctAnswerIndex": 0
+    },
+    {
+      "question": "What trait did Salazar Slytherin value most in a student?",
+      "options": ["Loyalty", "Wisdom", "Bravery", "Cunning"],
+      "correctAnswerIndex": 3
+    },
+    {
+      "question": "What is Salazar Slytherin’s signature item?",
+      "options": ["Diadem", "Sword", "Locket", "Cup"],
+      "correctAnswerIndex": 2
+    },
+    {
+      "question": "What color does the presence of a ghost turn flames?",
+      "options": ["Green", "Yellow", "Blue", "Purple"],
+      "correctAnswerIndex": 2
+    },
+    {
+      "question": "Who was Harry's first Defense Against the Dark Arts teacher when he arrived at Hogwarts?",
+      "options": ["Gilderoy Lockhart", "Quirinus Quirrell", "Remus Lupin", "Severus Snape"],
+      "correctAnswerIndex": 1
+    },
+    {
+      "question": "Who is the Transfiguration professor?",
+      "options": ["Minerva McGonagall", "Sybill Trelawney", "Filius Flitwick", "Pomona Sprout"],
+      "correctAnswerIndex": 0
+    },
+    {
+      "question": "In Harry's first lesson with Snape, what is the first potion the class learned to make?",
+      "options": ["An antidote to common poisons", "A forgetfulness potion", "A potion to soothe coughs", "A potion to cure boils"],
+      "correctAnswerIndex": 3
+    },
+    {
+      "question": "What part of a Mandrake is potentially fatal?",
+      "options": ["Eyes", "Scream", "Tongue", "Leaves"],
+      "correctAnswerIndex": 1
+    },
+    {
+      "question": "Where do first-years have Herbology Class?",
+      "options": ["Greenhouse Two", "Forbidden Forest", "Greenhouse One", "The Courtyard"],
+      "correctAnswerIndex": 2
+    },
+    {
+      "question": "What item in the Headmaster’s Office allows you to review bottled memories?",
+      "options": ["Mirror of Erised", "The Pensieve", "The time turner", "The phoenix"],
+      "correctAnswerIndex": 1
+    },
+    {
+      "question": "What is Voldemort's real name?",
+      "options": ["Tom Marvalo Riddle", "Tom Marvolo Riddle", "Tom Marlovo Riddle", "Tom Ravolo Riddle"],
+      "correctAnswerIndex": 1
+    },
+    {
+      "question": "What plant helps you breathe underwater?",
+      "options": ["Shrivelfig", "Mimbulus mimbletonia", "Alihotsy", "Gillyweed"],
+      "correctAnswerIndex": 3
+    },
+    {
+      "question": "Dittany is used primarily for ___.",
+      "options": ["To heal", "To counteract enchantments", "To petrify", "To help you breathe underwater"],
+      "correctAnswerIndex": 0
+    }
+  ],
+  "spellsQuestions": [
+    {
+      "question": "Why would you cast Alohomora?",
+      "options": ["To lock a door", "To unlock a door", "To reveal something hidden", "To fix something"],
+      "correctAnswerIndex": 1
+    },
+    {
+      "question": "Which spell is effective against Dementors?",
+      "options": ["Revelio", "Protego", "Expecto Patronum", "Lumos"],
+      "correctAnswerIndex": 2
+    },
+    {
+      "question": "What is the incantation for the shield charm?",
+      "options": ["Protego", "Alohomora", "Expelliarmus", "Lumos"],
+      "correctAnswerIndex": 0
+    },
+    {
+      "question": "Which spell has the opposite effect of Lumos?",
+      "options": ["Obscuro", "Incendio", "Accio", "Nox"],
+      "correctAnswerIndex": 3
+    },
+    {
+      "question": "What spell unmasked Gellert Grindelwald in 1926?",
+      "options": ["Revelio", "Riddikulus", "Impedimenta", "Lumos"],
+      "correctAnswerIndex": 0
+    },
+    {
+      "question": "What spell would you use to mend a pair of glasses?",
+      "options": ["Accio", "Salvio Hexia", "Impedimenta", "Reparo"],
+      "correctAnswerIndex": 3
+    }
+  ]
+}

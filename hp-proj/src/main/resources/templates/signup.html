@@ -14,18 +14,18 @@
             <input class="form-control" th:field="${signUpFormDTO.username}" />
         </label>
         <p class="error" th:errors="${signUpFormDTO.username}"></p>
-    </div>
+    </div><br>
     <div class="form-group">
         <label>Password
             <input class="form-control" th:field="${signUpFormDTO.password}" type="password" />
         </label>
         <p class="error" th:errors="${signUpFormDTO.password}"></p>
-    </div>
+    </div><br>
     <div class="form-group">
         <label>Verify Password
             <input class="form-control" th:field="${signUpFormDTO.verifyPassword}" type="password" />
         </label>
-    </div>
+    </div><br>
 
     <input type="submit" value="Create account" />
 </form>
