@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head th:replace="fragments :: head">
+</head>
+<body>
+<br>
+<nav th:replace="fragments :: login"></nav>
+<br>
+<br>
+
+<h1>Trivia Quiz</h1>
+<nav th:replace="fragments :: page-header"></nav><br>
+
+<div th:each="question,iterStat : ${questions}">
+    <div th:text="${question}"></div>
+
+    <ul>
+    <li th:each="option : ${options[iterStat.index]}"
+          th:text="${option}"></li>
+    </ul>
+</div>
+
+</body>
+</html>

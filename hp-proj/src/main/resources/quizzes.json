@@ -1,5 +1,5 @@
 {
-  "triviaQuestions": [
+    "triviaQuestions": [
     {
       "question": "What is Professor Dumbledore's full name?",
       "options": ["Albus Percival Wulfric Brian Dumbledore",
@@ -24,7 +24,7 @@
       "correctAnswerIndex": 3
     },
     {
-      "question": "What is Salazar Slytherin’s signature item?",
+      "question": "What is Salazar Slytherin's signature item?",
       "options": ["Diadem", "Sword", "Locket", "Cup"],
       "correctAnswerIndex": 2
     },
@@ -59,7 +59,7 @@
       "correctAnswerIndex": 2
     },
     {
-      "question": "What item in the Headmaster’s Office allows you to review bottled memories?",
+      "question": "What item in the Headmaster's Office allows you to review bottled memories?",
       "options": ["Mirror of Erised", "The Pensieve", "The time turner", "The phoenix"],
       "correctAnswerIndex": 1
     },
@@ -79,6 +79,7 @@
       "correctAnswerIndex": 0
     }
   ],
+
   "spellsQuestions": [
     {
       "question": "Why would you cast Alohomora?",
