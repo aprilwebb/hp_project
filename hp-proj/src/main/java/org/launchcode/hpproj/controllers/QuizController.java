@@ -1,12 +1,8 @@
 package org.launchcode.hpproj.controllers;
 
-import com.fasterxml.jackson.annotation.JsonAlias;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
-import org.launchcode.hpproj.models.Question;
-import org.launchcode.hpproj.models.data.QuizRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,19 +10,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.io.FileReader;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 @Controller
 @RequestMapping("quizzes")
 public class QuizController {
-
-    @Autowired
-    QuizRepository quizRepository;
-
-    Question[] triviaQuestions = {
-            new Question("What is Dumbledore's full name?", "b", "a, c, d")
-    };
 
 
     @GetMapping
@@ -36,6 +24,10 @@ public class QuizController {
 
     @GetMapping("/trivia")
     public String triviaQuiz(Model model) {
+//        if(errors.hasErrors()){
+//            return "quizzes/trivia";
+//        }
+
         JSONParser parser = new JSONParser();
         try {
             Object obj = parser.parse(new FileReader("/Users/Derek & April/Desktop/HP-proj/hp-proj/hp-proj/src/main/resources/quizzes.json"));
@@ -43,6 +35,7 @@ public class QuizController {
             JSONArray triviaQuestionsArray = (JSONArray) jsonObject.get("triviaQuestions");
             List<String> triviaQuestions = new ArrayList<>();
             ArrayList triviaOptions = new ArrayList<>();
+            ArrayList<Long> triviaAnswers = new ArrayList<>();
 
             for(int i=0; i < triviaQuestionsArray.size(); i++) {
                 JSONObject triviaQs = (JSONObject) triviaQuestionsArray.get(i);
@@ -52,10 +45,14 @@ public class QuizController {
                 JSONArray options = (JSONArray) triviaQs.get("options");
                 triviaOptions.add(options);
 
+                long answerIndex = (Long) triviaQs.get("correctAnswerIndex");
+                triviaAnswers.add(answerIndex);
+
             }
 
             model.addAttribute("questions", triviaQuestions);
             model.addAttribute("options", triviaOptions);
+            model.addAttribute("answerIndex", triviaAnswers);
 
         } catch (Exception e) {
             e.printStackTrace();

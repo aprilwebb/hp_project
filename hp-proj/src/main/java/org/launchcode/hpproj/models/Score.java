@@ -1,22 +1,39 @@
 package org.launchcode.hpproj.models;
 
 import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
 public class Score extends AbstractEntity{
 
     private int score;
 
-    @ManyToOne
-    @JoinColumn(name = "user_id")
-    private User user;
+    private String quizName;
 
     @ManyToOne
-    @JoinColumn(name = "quiz_id")
-    private Quiz quiz;
+    private User user;
+
+    public Score(int score, String quizName) {
+        this.score = score;
+        this.quizName = quizName;
+    }
+
+    public Score() {
+    }
+
+    public int getScore() {
+        return score;
+    }
+
+    public void setScore(int score) {
+        this.score = score;
+    }
+
+    public String getQuizName() {
+        return quizName;
+    }
+
+    public void setQuizName(String quizName) {
+        this.quizName = quizName;
+    }
 }
