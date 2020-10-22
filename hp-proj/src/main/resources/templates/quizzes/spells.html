@@ -8,18 +8,18 @@
 <br>
 <br>
 
-<h1>Trivia Quiz</h1>
+<h1>Spells Quiz</h1>
 <nav th:replace="fragments :: page-header"></nav><br>
 
 <div th:each="question,iterStat : ${questions}">
     <div th:text="${question}">
     </div>
-<form>
-    <div th:each="option, optionStat : ${options[iterStat.index]}">
-          <input type="radio" th:field="${options}" th:value="${optionStat.index}"
-                 th:text="${option}">
-    </div>
-</form>
+    <form>
+        <div th:each="option : ${options[iterStat.index]}">
+            <input type="radio" th:field="${options}" th:value="${answerIndex[iterStat.index]}"
+                   th:text="${option}">
+        </div>
+    </form>
     <br>
 </div>
 

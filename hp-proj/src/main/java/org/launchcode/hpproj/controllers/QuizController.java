@@ -16,6 +16,7 @@ import java.util.List;
 @RequestMapping("quizzes")
 public class QuizController {
 
+    JSONParser parser = new JSONParser();
 
     @GetMapping
     public String displayQuizzes(){
@@ -28,7 +29,6 @@ public class QuizController {
 //            return "quizzes/trivia";
 //        }
 
-        JSONParser parser = new JSONParser();
         try {
             Object obj = parser.parse(new FileReader("/Users/Derek & April/Desktop/HP-proj/hp-proj/hp-proj/src/main/resources/quizzes.json"));
             JSONObject jsonObject = (JSONObject) obj;
@@ -59,5 +59,43 @@ public class QuizController {
         }
 
         return "quizzes/trivia";
+    }
+
+    @GetMapping("/spellsquiz")
+    public String spellsQuiz(Model model) {
+//        if(errors.hasErrors()){
+//            return "quizzes/trivia";
+//        }
+
+        try {
+            Object obj = parser.parse(new FileReader("/Users/Derek & April/Desktop/HP-proj/hp-proj/hp-proj/src/main/resources/quizzes.json"));
+            JSONObject jsonObject = (JSONObject) obj;
+            JSONArray spellsQuestionsArray = (JSONArray) jsonObject.get("spellsQuestions");
+            List<String> spellsQuestions = new ArrayList<>();
+            ArrayList spellsOptions = new ArrayList<>();
+            ArrayList<Long> spellsAnswers = new ArrayList<>();
+
+            for(int i=0; i < spellsQuestionsArray.size(); i++) {
+                JSONObject triviaQs = (JSONObject) spellsQuestionsArray.get(i);
+                String question = (String) triviaQs.get("question");
+                spellsQuestions.add(question);
+
+                JSONArray options = (JSONArray) triviaQs.get("options");
+                spellsOptions.add(options);
+
+                long answerIndex = (Long) triviaQs.get("correctAnswerIndex");
+                spellsAnswers.add(answerIndex);
+
+            }
+
+            model.addAttribute("questions", spellsQuestions);
+            model.addAttribute("options", spellsOptions);
+            model.addAttribute("answerIndex", spellsAnswers);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return "quizzes/spells";
     }
 }

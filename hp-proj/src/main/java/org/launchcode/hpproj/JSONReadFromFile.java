@@ -3,10 +3,8 @@ package org.launchcode.hpproj;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
-import org.springframework.boot.json.JsonParser;
 
 import java.io.FileReader;
-import java.util.Iterator;
 
 public class JSONReadFromFile {
     public static void main(String[] args){
