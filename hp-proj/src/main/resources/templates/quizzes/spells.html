@@ -15,8 +15,8 @@
     <div th:text="${question}">
     </div>
     <form>
-        <div th:each="option : ${options[iterStat.index]}">
-            <input type="radio" th:field="${options}" th:value="${answerIndex[iterStat.index]}"
+        <div th:each="option, optionStat : ${options[iterStat.index]}">
+            <input type="radio" th:field="${options}" th:value="${optionStat.index}"
                    th:text="${option}">
         </div>
     </form>

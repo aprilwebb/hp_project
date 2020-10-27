@@ -3,9 +3,12 @@ package org.launchcode.hpproj.controllers;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
+import org.launchcode.hpproj.models.Quiz;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.io.FileReader;
@@ -34,7 +37,7 @@ public class QuizController {
             JSONObject jsonObject = (JSONObject) obj;
             JSONArray triviaQuestionsArray = (JSONArray) jsonObject.get("triviaQuestions");
             List<String> triviaQuestions = new ArrayList<>();
-            ArrayList triviaOptions = new ArrayList<>();
+            ArrayList<JSONArray> triviaOptions = new ArrayList<>();
             ArrayList<Long> triviaAnswers = new ArrayList<>();
 
             for(int i=0; i < triviaQuestionsArray.size(); i++) {
@@ -49,7 +52,7 @@ public class QuizController {
                 triviaAnswers.add(answerIndex);
 
             }
-
+            model.addAttribute("quiz", new Quiz());
             model.addAttribute("questions", triviaQuestions);
             model.addAttribute("options", triviaOptions);
             model.addAttribute("answerIndex", triviaAnswers);
@@ -59,6 +62,15 @@ public class QuizController {
         }
 
         return "quizzes/trivia";
+    }
+
+    @PostMapping("/trivia")
+    public String displayTriviaScore(@ModelAttribute ArrayList<Long> triviaAnswers){
+        int score = 0;
+
+
+
+        return "redirect:";
     }
 
     @GetMapping("/spellsquiz")

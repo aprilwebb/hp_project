@@ -110,6 +110,64 @@
       "question": "What spell would you use to mend a pair of glasses?",
       "options": ["Accio", "Salvio Hexia", "Impedimenta", "Reparo"],
       "correctAnswerIndex": 3
+    },
+    {
+      "question": "If you wanted to summon your broom, which charm would you use?",
+      "options": ["Accio", "Aguamenti", "Alohomora", "Aparecium"],
+      "correctAnswerIndex": 0
+    },
+    {
+      "question": "Which of the following is not an unforgivable curse?",
+      "options": ["Crucio", "Sectumsempra", "Avada Kedavra", "Imperio"],
+      "correctAnswerIndex": 1
+    },
+    {
+      "question": "Which spell could be used instead of a microphone?",
+      "options": ["Accio", "Sonorus", "Bombarda", "Quietus"],
+      "correctAnswerIndex": 1
+    },
+    {
+      "question": "Hermione Granger used this charm on a number of fake Galleons to alert Dumbledore's Army of their next meeting date and time.",
+      "options": ["Diffindo charm", "Erecto charm", "Protean charm", "Legilimens charm"],
+      "correctAnswerIndex": 3
+    },
+    {
+      "question": "This memory charm is used to erase specific memories from one's mind.",
+      "options": ["Obscuro", "Oscausi", "Scourgify", "Obliviate"],
+      "correctAnswerIndex": 3
+    },
+    {
+      "question": "Which curse breaks objects, and in stronger usages will disintegrate them?",
+      "options": ["Reverte", "Fiendfyre", "Reducto", "Densaugeo"],
+      "correctAnswerIndex": 2
+    },
+    {
+      "question": "Harry Potter used this spell to defeat a dragon in the Goblet of Fire.",
+      "options": ["Accio", "Crucio", "Reducto", "Impedimenta"],
+      "correctAnswerIndex": 0
+    },
+    {
+      "question": "What does the Waddiwasi spell do?",
+      "options": ["Makes a person's ears grow to an enormous size",
+        "Sends a soft object to a specific destination",
+        "Turns someone's feet into fins",
+        "None of the above"],
+      "correctAnswerIndex": 1
+    },
+    {
+      "question": "In the Goblet of Fire, which spell does Harry use to fix his broken nose?",
+      "options": ["Rectaro",
+        "Reparo",
+        "Salvio Hexia",
+        "Episkey"],
+      "correctAnswerIndex": 3
+    }
+  ],
+  "sortingQuiz": [
+    {
+      "question": "",
+      "options": ["", " ", "", ""],
+      "correctAnswerIndex": 3
     }
   ]
 }
