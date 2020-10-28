@@ -14,10 +14,10 @@
 <div th:each="question,iterStat : ${questions}">
     <div th:text="${question}">
     </div>
-    <form>
+    <form name="spells" method="post">
         <div th:each="option, optionStat : ${options[iterStat.index]}">
-            <input type="radio" th:field="${options}" th:value="${optionStat.index}"
-                   th:text="${option}">
+            <input type="radio" required="required" th:field="${quiz.options}"
+                   th:value="${optionStat.index}" th:text="${option}">
         </div>
     </form>
     <br>

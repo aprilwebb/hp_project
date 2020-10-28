@@ -3,6 +3,7 @@ package org.launchcode.hpproj.controllers;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 import org.launchcode.hpproj.models.Quiz;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,6 +22,15 @@ import java.util.List;
 public class QuizController {
 
     JSONParser parser = new JSONParser();
+    Object obj;
+    {
+        try {
+            obj = parser.parse(new FileReader("/Users/Derek & April/Desktop/HP-proj/hp-proj/hp-proj/src/main/resources/quizzes.json"));
+        } catch (IOException | ParseException e) {
+            e.printStackTrace();
+        }
+    }
+    JSONObject jsonObject = (JSONObject) obj;
 
     @GetMapping
     public String displayQuizzes(){
@@ -31,10 +42,6 @@ public class QuizController {
 //        if(errors.hasErrors()){
 //            return "quizzes/trivia";
 //        }
-
-        try {
-            Object obj = parser.parse(new FileReader("/Users/Derek & April/Desktop/HP-proj/hp-proj/hp-proj/src/main/resources/quizzes.json"));
-            JSONObject jsonObject = (JSONObject) obj;
             JSONArray triviaQuestionsArray = (JSONArray) jsonObject.get("triviaQuestions");
             List<String> triviaQuestions = new ArrayList<>();
             ArrayList<JSONArray> triviaOptions = new ArrayList<>();
@@ -52,14 +59,11 @@ public class QuizController {
                 triviaAnswers.add(answerIndex);
 
             }
+
             model.addAttribute("quiz", new Quiz());
             model.addAttribute("questions", triviaQuestions);
             model.addAttribute("options", triviaOptions);
             model.addAttribute("answerIndex", triviaAnswers);
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
 
         return "quizzes/trivia";
     }
@@ -79,12 +83,9 @@ public class QuizController {
 //            return "quizzes/trivia";
 //        }
 
-        try {
-            Object obj = parser.parse(new FileReader("/Users/Derek & April/Desktop/HP-proj/hp-proj/hp-proj/src/main/resources/quizzes.json"));
-            JSONObject jsonObject = (JSONObject) obj;
             JSONArray spellsQuestionsArray = (JSONArray) jsonObject.get("spellsQuestions");
             List<String> spellsQuestions = new ArrayList<>();
-            ArrayList spellsOptions = new ArrayList<>();
+            ArrayList<Object> spellsOptions = new ArrayList<>();
             ArrayList<Long> spellsAnswers = new ArrayList<>();
 
             for(int i=0; i < spellsQuestionsArray.size(); i++) {
@@ -100,13 +101,10 @@ public class QuizController {
 
             }
 
+            model.addAttribute("quiz", new Quiz());
             model.addAttribute("questions", spellsQuestions);
             model.addAttribute("options", spellsOptions);
             model.addAttribute("answerIndex", spellsAnswers);
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
 
         return "quizzes/spells";
     }
